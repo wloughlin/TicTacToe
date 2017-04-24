@@ -84,17 +84,10 @@ public class GraphPanel extends JPanel {
 		boolean troll = !graph.addEdge(e);
 
 		ArrayList<BoardPanel> r = new ArrayList<BoardPanel>();
-		// check if these boards are full and only add them if they arent;
 		BoardPanel fullCheck = getBoardfromCell(e.getFrom());
-		if(!fullCheck.isFull())
-		{
-			r.add(fullCheck);
-		}
+		r.add(fullCheck);
 		fullCheck = getBoardfromCell(e.getTo());
-		if(!fullCheck.isFull())
-		{
-			r.add(getBoardfromCell(e.getTo()));
-		}
+		r.add(getBoardfromCell(e.getTo()));
 		lines.add(new Line(e));
 		if(troll)
 		{

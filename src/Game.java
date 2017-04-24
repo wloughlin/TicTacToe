@@ -11,6 +11,7 @@ import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
 import java.util.ArrayList;
 import java.util.HashSet;
+import java.util.Iterator;
 
 import javax.swing.BorderFactory;
 import javax.swing.JFrame;
@@ -142,6 +143,15 @@ public class Game extends JFrame {
 										cycle = null;
 										move1 = null;
 										move2 = null;
+										for(Iterator<BoardPanel> it = currentBoards.iterator(); it.hasNext();)
+										{
+											BoardPanel b = it.next();
+											if(b.isFull())
+											{
+												b.setBorder(BorderFactory.createLineBorder(Color.MAGENTA, 2));
+												it.remove();
+											}
+										}
 										break;
 									}
 								}

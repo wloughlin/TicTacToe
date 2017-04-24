@@ -55,9 +55,8 @@ public class BoardPanel extends JPanel {
 			for(int j = 0; j < dim; j++)
 			{
 				CellPanel cp = panels[i][j];
-				Point loc = cp.getLocation();
-				Rectangle rect = new Rectangle(loc.x+col*getWidth(), loc.y+row*getHeight(), 
-						cp.getWidth(), cp.getHeight());
+				Point loc = cp.getLocationOnScreen();
+				Rectangle rect = new Rectangle(loc.x, loc.y, cp.getWidth(), cp.getHeight());
 				if(rect.contains(point))
 				{
 					return new Point(i, j);
