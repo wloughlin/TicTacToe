@@ -57,8 +57,8 @@ public class Game extends JFrame {
 					{
 						public void mouseClicked(MouseEvent e)
 						{
-							BoardPanel bp = panel.getBoard(e.getPoint());
-							Point index = panel.getCell(e.getPoint());
+							BoardPanel bp = panel.getBoard(e.getLocationOnScreen());
+							Point index = panel.getCell(e.getLocationOnScreen());
 							if(move1 == null && cycle == null && !bp.isTaken(index))
 							{
 								if(currentBoards.size() == 0 || currentBoards.contains(bp))
@@ -125,7 +125,7 @@ public class Game extends JFrame {
 						{
 							if(cycle != null)
 							{
-								move1 = panel.getCell(e.getPoint());
+								move1 = panel.getCell(e.getLocationOnScreen());
 							}
 						}
 						
@@ -133,7 +133,7 @@ public class Game extends JFrame {
 						{
 							if(cycle != null)
 							{
-								move2 = panel.getCell(e.getPoint());
+								move2 = panel.getCell(e.getLocationOnScreen());
 								OwnedEdge selected = new OwnedEdge(move1, move2, turn);
 								for(OwnedEdge edge : cycle)
 								{
