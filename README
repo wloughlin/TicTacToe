@@ -1,1 +1,7 @@
-tic tac toe
+A variation of tic-tac-to that combines Ultimate tic-tac-toe with Quantum tic-tac-toe.
+
+On a turn may play a move in both of the sub-boards determined by their opponents last move. If the opponent played a move in the top-right and center boxes of their sub-boards, you may play a move in the top-right and center sub-boards.
+
+After making both of your moves, they boxes you choose will be connected in an internal graph where each pair of moves represents an edge. When a player's move causes a cycle in this graph, their opponent chooses how to collapse the cycle by dragging one of their moves to its partner, collapsing it into the box.
+
+The object is to win 3 sub-boards in a row, column, or diagonal. 
